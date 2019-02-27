@@ -2,9 +2,5 @@ name: DragonSilencer
 main: DragonSilencer.DragonSilencer
 version: 1.0
 api-version: 1.13
-commands:
-  sh:
-    description: main command
-    usage: /<command>
 depend:
   - ProtocolLib
