@@ -4,6 +4,7 @@ plugins {
 
 repositories {
     jcenter()
+    mavenCentral()
     maven { url "http://repo.dmulloy2.net/nexus/repository/public/" }
     maven { url "https://hub.spigotmc.org/nexus/content/repositories/snapshots" }
     maven { url = 'https://hub.spigotmc.org/nexus/content/groups/public/' }
@@ -14,3 +15,16 @@ dependencies {
     compileOnly "com.comphenix.protocol:ProtocolLib:4.4.0"
 }
 
+version = "1.0"
+description = "Prevents sound of dying enderdragon to be played at all"
+ext.url = "https://github.com/corwinbass/MC_Dragon_Silencer"
+
+processResources {
+    filesMatching('plugin.yml') {
+        expand(projectName: project.name,
+               version: project.version,
+               projectDescription: project.description,
+               url: project.url
+        )
+    }
+}

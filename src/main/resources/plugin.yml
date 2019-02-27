@@ -1,6 +1,7 @@
-name: DragonSilencer
+name: ${projectName}
 main: DragonSilencer.DragonSilencer
-version: 1.0
+version: ${version}
+url: ${url}
 api-version: 1.13
 depend:
   - ProtocolLib
