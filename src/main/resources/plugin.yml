@@ -1,5 +1,5 @@
 name: ${projectName}
-main: DragonSilencer.DragonSilencer
+main: com.github.corwinbass.mc_dragon_silencer.DragonSilencer
 version: ${version}
 url: ${url}
 api-version: 1.13

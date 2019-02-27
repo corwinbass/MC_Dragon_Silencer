@@ -1,4 +1,4 @@
-package DragonSilencer;
+package com.github.corwinbass.mc_dragon_silencer;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.ProtocolLibrary;
