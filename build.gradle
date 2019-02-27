@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+mainClassName = 'MC_Dragon_Silencer.App'
+
+
+repositories {
+    jcenter()
+    maven { url "http://repo.dmulloy2.net/nexus/repository/public/" }
+    maven { url "https://hub.spigotmc.org/nexus/content/repositories/snapshots" }
+}
+
+dependencies {
+    compileOnly "org.spigotmc:spigot-api:1.13.1-R0.1-SNAPSHOT"
+    compileOnly "com.comphenix.protocol:ProtocolLib:4.4.0"
+}
+
