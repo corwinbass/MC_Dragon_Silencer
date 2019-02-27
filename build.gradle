@@ -2,13 +2,11 @@ plugins {
     id 'java'
 }
 
-mainClassName = 'MC_Dragon_Silencer.App'
-
-
 repositories {
     jcenter()
     maven { url "http://repo.dmulloy2.net/nexus/repository/public/" }
     maven { url "https://hub.spigotmc.org/nexus/content/repositories/snapshots" }
+    maven { url = 'https://hub.spigotmc.org/nexus/content/groups/public/' }
 }
 
 dependencies {
