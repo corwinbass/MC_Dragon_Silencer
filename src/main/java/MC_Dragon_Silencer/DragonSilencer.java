@@ -29,6 +29,7 @@ public class DragonSilencer extends JavaPlugin {
             getLogger().info("DragonSilencer successfully enabled.");
         } catch(Exception ex) {
             getLogger().info("DragonSilencer - error occurred during start up.");
+            ex.printStackTrace(); // .. to see what is actually wrong
         }
     }
 
