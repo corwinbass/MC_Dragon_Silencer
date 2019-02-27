@@ -1,8 +1,7 @@
 # Dragon Silencer
 MC Plugin for 1.13.1 to turn off the dying dragon sound.
-Ready-to-use plugin can be found in folder plugin/ and used ProtocolLib in folder dependencies.
 
-In cooperation with https://github.com/corwinbass
+Ready-to-use plugin can be found Releases tab 
 
 # Dependencies
-- ProtocolLib
+- ProtocolLib - https://github.com/dmulloy2/ProtocolLib/
