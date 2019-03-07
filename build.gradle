@@ -7,7 +7,7 @@ repositories {
     mavenCentral()
     maven { url "http://repo.dmulloy2.net/nexus/repository/public/" }
     maven { url "https://hub.spigotmc.org/nexus/content/repositories/snapshots" }
-    maven { url = 'https://hub.spigotmc.org/nexus/content/groups/public/' }
+    maven { url "https://hub.spigotmc.org/nexus/content/groups/public/" }
 }
 
 dependencies {
@@ -15,7 +15,13 @@ dependencies {
     compileOnly "com.comphenix.protocol:ProtocolLib:4.4.0"
 }
 
-version = "1.0"
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+version = "1.1"
 description = "Prevents sound of dying enderdragon to be played at all"
 ext.url = "https://github.com/corwinbass/MC_Dragon_Silencer"
 

@@ -5,9 +5,17 @@ import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.events.ListenerPriority;
 import com.comphenix.protocol.events.PacketAdapter;
 import com.comphenix.protocol.events.PacketEvent;
+import org.bukkit.Location;
+import org.bukkit.Sound;
+import org.bukkit.SoundCategory;
+import org.bukkit.World;
+import org.bukkit.entity.EntityType;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class DragonSilencer extends JavaPlugin {
+public class DragonSilencer extends JavaPlugin implements Listener {
 
     private PacketAdapter Adapter = null;
 
@@ -19,7 +27,7 @@ public class DragonSilencer extends JavaPlugin {
                 public void onPacketSending(PacketEvent event) {
                     if (event.getPacketType() == PacketType.Play.Server.WORLD_EVENT) {
                         if (event.getPacket().getIntegers().read(0) == 1028) {
-                            event.setCancelled(true);
+                            event.setCancelled(true);  // block the packet, prevents playing the sound on whole server
                         }
                     }
                 }
@@ -30,6 +38,16 @@ public class DragonSilencer extends JavaPlugin {
         } catch(Exception ex) {
             getLogger().info("DragonSilencer - error occurred during start up.");
             ex.printStackTrace(); // .. to see what is actually wrong
+        }
+        getServer().getPluginManager().registerEvents(this, this);
+    }
+
+    @EventHandler
+    public void onEnderDragonDeath(EntityDeathEvent event) {
+        if (!(event.getEntity().getLocation().getWorld().getEnvironment() == World.Environment.THE_END)) return;
+        if (event.getEntityType() == EntityType.ENDER_DRAGON) {
+            Location loc = event.getEntity().getLocation();
+            loc.getWorld().getPlayers().forEach(player -> player.playSound(loc, Sound.ENTITY_ENDER_DRAGON_DEATH, 1.0f, 1.0f));
         }
     }
 

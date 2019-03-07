@@ -1,6 +1,7 @@
 name: ${projectName}
 main: com.github.corwinbass.mc_dragon_silencer.DragonSilencer
 version: ${version}
+authors: [Katczinsky21, Corrin_ ]
 url: ${url}
 api-version: 1.13
 depend:
