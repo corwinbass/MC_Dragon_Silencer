@@ -1,28 +1,25 @@
 plugins {
     id 'java'
+    id("io.papermc.paperweight.userdev") version "2.0.0-beta.17"
 }
 
 repositories {
-    jcenter()
     mavenCentral()
-    maven { url "http://repo.dmulloy2.net/nexus/repository/public/" }
-    maven { url "https://hub.spigotmc.org/nexus/content/repositories/snapshots" }
-    maven { url "https://hub.spigotmc.org/nexus/content/groups/public/" }
+    maven { url = "https://repo.dmulloy2.net/nexus/repository/public/" }
+    maven { url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots" }
+    maven { url = "https://hub.spigotmc.org/nexus/content/groups/public/" }
 }
 
 dependencies {
-    compileOnly "org.spigotmc:spigot-api:1.13.1-R0.1-SNAPSHOT"
-    compileOnly "com.comphenix.protocol:ProtocolLib:4.4.0"
+    paperweight.paperDevBundle(libs.versions.io.papermc.paper)
+    compileOnly "com.comphenix.protocol:ProtocolLib:5.4.0"
 }
-
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
 
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
-version = "1.1"
-description = "Prevents sound of dying enderdragon to be played at all"
+version = "1.4"
+description = "Prevents sound of dying enderdragon to be played to whole server, end dimension only"
 ext.url = "https://github.com/corwinbass/MC_Dragon_Silencer"
 
 processResources {

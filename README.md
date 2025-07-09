@@ -1,7 +1,7 @@
 # Dragon Silencer
-MC Plugin for 1.13.1 to turn off the dying dragon sound.
+MC Plugin for 1.21 to turn off the dying dragon sound.
 
-Ready-to-use plugin can be found on Releases tab [here](https://github.com/corwinbass/MC_Dragon_Silencer/releases) 
+Since version 1.4 it blocks sound of wither spawning globally too. Sound is played only to players in 32 block range of spanwed wither.
 
 # Dependencies
 - ProtocolLib - https://github.com/dmulloy2/ProtocolLib/
